@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Oops</title>
+
+<style>
+body{
+background:#e7faff;
+font-family:'Comic Sans MS', cursive;
+text-align:center;
+padding-top:120px;
+overflow:hidden;
+}
+
+h1{
+font-size:50px;
+color:#ff4d6d;
+}
+
+.confetti{
+position:absolute;
+font-size:25px;
+animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="300">
+
+<h1>🎉 HAPPY BIRTHDAY!!! 🎉</h1>
+
+<p>You weren't supposed to click that 😌</p>
+
+<script>
+
+setInterval(()=>{
+let c=document.createElement("div");
+c.innerHTML="🎉";
+c.className="confetti";
+c.style.left=Math.random()*100+"vw";
+document.body.appendChild(c);
+
+setTimeout(()=>c.remove(),4000);
+
+},150);
+
+</script>
+
+</body>
+</html>
