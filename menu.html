@@ -1,50 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Choose a Button</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 background:linear-gradient(135deg,#ffe5ec,#e0bbff,#d6f5ff);
 font-family:'Comic Sans MS', cursive;
 text-align:center;
-padding-top:120px;
+}
+
+.container{
+width:90%;
+max-width:400px;
+}
+
+h1{
+margin-bottom:30px;
+font-size:36px;
 }
 
 button{
 display:block;
-margin:25px auto;
-padding:18px 50px;
-font-size:20px;
+width:100%;
+margin:15px auto;
+padding:18px;
+font-size:18px;
 border:none;
-border-radius:30px;
+border-radius:40px;
 background:white;
-cursor:pointer;
 box-shadow:0 10px 20px rgba(0,0,0,0.15);
-transition:0.3s;
+cursor:pointer;
 }
 
 button:hover{
-transform:scale(1.1);
+transform:scale(1.05);
 }
+
 </style>
 </head>
 
 <body>
 
-<h1>Pick a Button 👇</h1>
+<div class="container">
+
+<h1>Choose One</h1>
 
 <button onclick="location.href='announcement.html'">
-📢 Important Announcement
+Important Announcement
 </button>
 
 <button onclick="location.href='gift.html'">
-🎁 Claim Your Birthday Gift
+Claim Your Birthday Gift
 </button>
 
 <button onclick="location.href='dontclick.html'">
-🚫 Do Not Click!!!
+Do Not Click!!!
 </button>
+
+</div>
 
 </body>
 </html>
