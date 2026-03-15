@@ -1,70 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
 body{
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ffe5ec,#e0bbff,#d6f5ff);
-font-family:'Comic Sans MS', cursive;
+font-family:Comic Sans MS;
 text-align:center;
+overflow:hidden;
+background:linear-gradient(-45deg,#ffd6e7,#e4c1f9,#cdb4db,#bde0fe);
+background-size:400% 400%;
+animation:bgMove 10s infinite alternate;
 }
 
-.container{
-width:90%;
-max-width:400px;
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 h1{
-margin-bottom:30px;
-font-size:36px;
+margin-top:100px;
+font-size:40px;
 }
 
 button{
+
 display:block;
-width:100%;
-margin:15px auto;
+margin:20px auto;
+width:260px;
 padding:18px;
 font-size:18px;
 border:none;
 border-radius:40px;
 background:white;
-box-shadow:0 10px 20px rgba(0,0,0,0.15);
 cursor:pointer;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 
 button:hover{
-transform:scale(1.05);
+transform:scale(1.1);
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
-
 <h1>Choose One</h1>
 
-<button onclick="location.href='announcement.html'">
-Important Announcement
-</button>
+<button onclick="go('announcement.html')">🫣 Important Announcement 🤫</button>
 
-<button onclick="location.href='gift.html'">
-Claim Your Birthday Gift
-</button>
+<button onclick="go('gift.html')">🎁 Claim Your Birthday Gift 🎁</button>
 
-<button onclick="location.href='dontclick.html'">
-Do Not Click!!!
-</button>
+<button onclick="go('dontclick.html')">🚫 Do Not Click!!! 🚫</button>
 
-</div>
+<script>
+
+function confetti(){
+
+for(let i=0;i<80;i++){
+
+let c=document.createElement("div")
+c.innerHTML="🎊"
+
+c.style.position="fixed"
+c.style.left=Math.random()*100+"vw"
+c.style.top=Math.random()*100+"vh"
+
+document.body.appendChild(c)
+
+setTimeout(()=>{c.remove()},2000)
+
+}
+
+}
+
+function go(page){
+
+confetti()
+
+setTimeout(()=>{
+window.location=page
+},800)
+
+}
+
+</script>
 
 </body>
 </html>
