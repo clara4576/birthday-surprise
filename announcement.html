@@ -9,8 +9,17 @@
 body{
 font-family:Comic Sans MS;
 text-align:center;
-background:#f3e5ff;
 padding-top:80px;
+
+background:linear-gradient(-45deg,#ffd6e7,#f8c8dc,#e4c1f9,#f3d1ff);
+background-size:400% 400%;
+animation:bgMove 10s infinite alternate;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 img{
