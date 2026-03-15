@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Birthday Surprise</title>
@@ -9,50 +10,56 @@
 
 body{
 margin:0;
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-font-family:'Comic Sans MS', cursive;
-background:linear-gradient(135deg,#ffd6e7,#e0bbff,#cde7ff);
+font-family:Comic Sans MS;
 text-align:center;
 overflow:hidden;
+background:linear-gradient(-45deg,#ffd6e7,#e4c1f9,#cdb4db,#bde0fe);
+background-size:400% 400%;
+animation:bgMove 10s infinite alternate;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 h1{
-font-size:40px;
-margin-bottom:20px;
+margin-top:80px;
+font-size:38px;
+animation:bounce 2s infinite alternate;
 }
 
-.gif{
-width:200px;
-margin-bottom:30px;
+@keyframes bounce{
+from{transform:translateY(0)}
+to{transform:translateY(-10px)}
+}
+
+img{
+width:260px;
+margin-top:20px;
+border-radius:15px;
 }
 
 button{
-padding:16px 40px;
+margin-top:30px;
+padding:18px 40px;
 font-size:20px;
 border:none;
 border-radius:40px;
 background:white;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
 cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{box-shadow:0 0 10px pink}
+to{box-shadow:0 0 25px purple}
 }
 
 button:hover{
 transform:scale(1.1);
-}
-
-.heart{
-position:absolute;
-font-size:22px;
-animation:float 6s linear infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(100vh);}
-100%{transform:translateY(-10vh);}
 }
 
 </style>
@@ -60,24 +67,61 @@ animation:float 6s linear infinite;
 
 <body>
 
-<h1>A Little Surprise For You ✨</h1>
+<h1>✨ A Little Surprise For You ✨</h1>
 
-<img class="gif" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
+<img src="snow-winter.gif">
 
-<button onclick="location.href='menu.html'">
-Open the Surprise 💌
-</button>
+<br>
+
+<button onclick="goNext()">Open the Surprise 💌</button>
 
 <script>
 
+function confetti(){
+
+for(let i=0;i<80;i++){
+
+let c=document.createElement("div")
+
+c.innerHTML="🎉"
+
+c.style.position="fixed"
+c.style.left=Math.random()*100+"vw"
+c.style.top=Math.random()*100+"vh"
+c.style.fontSize="30px"
+
+document.body.appendChild(c)
+
+setTimeout(()=>{c.remove()},2000)
+
+}
+
+}
+
+function goNext(){
+
+confetti()
+
+setTimeout(()=>{
+window.location="menu.html"
+},800)
+
+}
+
 setInterval(()=>{
-let heart=document.createElement("div");
-heart.innerHTML="💖";
-heart.className="heart";
-heart.style.left=Math.random()*100+"vw";
-document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),6000);
-},500);
+
+let f=document.createElement("div")
+f.innerHTML="💖"
+f.style.position="fixed"
+f.style.left=Math.random()*100+"vw"
+f.style.top="-10px"
+f.style.fontSize="22px"
+
+document.body.appendChild(f)
+
+setTimeout(()=>{f.remove()},5000)
+
+},500)
 
 </script>
 
