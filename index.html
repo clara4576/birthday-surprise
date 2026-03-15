@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Birthday Surprise</title>
 
 <style>
+
 body{
 margin:0;
-font-family:'Comic Sans MS', cursive;
-background:linear-gradient(135deg,#ffd6e7,#e0c3fc,#cde7ff);
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-height:100vh;
+font-family:'Comic Sans MS', cursive;
+background:linear-gradient(135deg,#ffd6e7,#e0bbff,#cde7ff);
+text-align:center;
 overflow:hidden;
 }
 
+h1{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.gif{
+width:200px;
+margin-bottom:30px;
+}
+
 button{
-padding:15px 40px;
+padding:16px 40px;
 font-size:20px;
 border:none;
-border-radius:30px;
+border-radius:40px;
 background:white;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
 cursor:pointer;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
-transition:0.3s;
 }
 
 button:hover{
@@ -33,7 +46,7 @@ transform:scale(1.1);
 
 .heart{
 position:absolute;
-font-size:20px;
+font-size:22px;
 animation:float 6s linear infinite;
 }
 
@@ -41,36 +54,31 @@ animation:float 6s linear infinite;
 0%{transform:translateY(100vh);}
 100%{transform:translateY(-10vh);}
 }
+
 </style>
 </head>
 
 <body>
 
-<h1>✨ A Little Surprise For You ✨</h1>
+<h1>A Little Surprise For You ✨</h1>
 
-<img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="220">
-
-<br>
+<img class="gif" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
 
 <button onclick="location.href='menu.html'">
 Open the Surprise 💌
 </button>
 
-<audio autoplay loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6d1c6e3c34.mp3" type="audio/mpeg">
-</audio>
-
 <script>
+
 setInterval(()=>{
 let heart=document.createElement("div");
 heart.innerHTML="💖";
 heart.className="heart";
 heart.style.left=Math.random()*100+"vw";
 document.body.appendChild(heart);
-
 setTimeout(()=>heart.remove(),6000);
-
 },500);
+
 </script>
 
 </body>
