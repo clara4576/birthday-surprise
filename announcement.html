@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Announcement</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 body{
-background:#f9e7ff;
+margin:0;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 font-family:'Comic Sans MS', cursive;
+background:linear-gradient(135deg,#ffd6e7,#e0bbff,#cde7ff);
 text-align:center;
-padding-top:150px;
-font-size:28px;
 }
+
+.gif{
+width:200px;
+margin-bottom:30px;
+}
+
+p{
+font-size:26px;
+line-height:1.6;
+}
+
 </style>
 </head>
 
 <body>
 
-<img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" width="250">
+<img class="gif" src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif">
 
-<p id="text"></p>
+<p>
+Someone amazing was born today 💖 <br><br>
 
-<script>
-let message="📢 Someone amazing was born today 💖";
-let i=0;
-
-function type(){
-if(i<message.length){
-document.getElementById("text").innerHTML+=message.charAt(i);
-i++;
-setTimeout(type,80);
-}
-}
-
-type();
-</script>
+Happy Birthday Babuuuuuuuuuuu 🎉 <br>
+Have a blast 🥳 <br>
+Partyyyyyyyyyyyyyyyyyy kavali 💃 <br>
+Oka bottle saripotadi adjust chesukunta le 😌
+</p>
 
 </body>
 </html>
