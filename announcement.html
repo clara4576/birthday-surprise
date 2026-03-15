@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Announcement</title>
+
+<style>
+body{
+background:#f9e7ff;
+font-family:'Comic Sans MS', cursive;
+text-align:center;
+padding-top:150px;
+font-size:28px;
+}
+</style>
+</head>
+
+<body>
+
+<img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" width="250">
+
+<p id="text"></p>
+
+<script>
+let message="📢 Someone amazing was born today 💖";
+let i=0;
+
+function type(){
+if(i<message.length){
+document.getElementById("text").innerHTML+=message.charAt(i);
+i++;
+setTimeout(type,80);
+}
+}
+
+type();
+</script>
+
+</body>
+</html>
