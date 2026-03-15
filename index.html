@@ -62,6 +62,25 @@ button:hover{
 transform:scale(1.1);
 }
 
+/* floating emoji style */
+
+.floating{
+position:fixed;
+font-size:24px;
+animation:floatUp 6s linear forwards;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-110vh);
+opacity:0;
+}
+}
+
 </style>
 </head>
 
@@ -77,51 +96,34 @@ transform:scale(1.1);
 
 <script>
 
-function confetti(){
-
-for(let i=0;i<80;i++){
-
-let c=document.createElement("div")
-
-c.innerHTML="🎉"
-
-c.style.position="fixed"
-c.style.left=Math.random()*100+"vw"
-c.style.top=Math.random()*100+"vh"
-c.style.fontSize="30px"
-
-document.body.appendChild(c)
-
-setTimeout(()=>{c.remove()},2000)
-
-}
-
-}
+/* go to menu page */
 
 function goNext(){
-
-confetti()
-
-setTimeout(()=>{
 window.location="menu.html"
-},800)
-
 }
+
+/* floating emojis */
+
+const emojis = ["💖","💗","🎂","🥳","🎁","✨"]
 
 setInterval(()=>{
 
-let f=document.createElement("div")
-f.innerHTML="💖"
-f.style.position="fixed"
-f.style.left=Math.random()*100+"vw"
-f.style.top="-10px"
-f.style.fontSize="22px"
+let e=document.createElement("div")
 
-document.body.appendChild(f)
+e.className="floating"
 
-setTimeout(()=>{f.remove()},5000)
+e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)]
 
-},500)
+e.style.left=Math.random()*100+"vw"
+e.style.bottom="-20px"
+
+document.body.appendChild(e)
+
+setTimeout(()=>{
+e.remove()
+},6000)
+
+},400)
 
 </script>
 
