@@ -1,86 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
 body{
-margin:0;
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-font-family:'Comic Sans MS', cursive;
-background:linear-gradient(135deg,#ffd6e7,#e0bbff,#cde7ff);
+font-family:Comic Sans MS;
 text-align:center;
-overflow:hidden;
+background:#e7faff;
+padding-top:80px;
 }
 
-.gif{
-width:220px;
-margin-bottom:20px;
-}
-
-h1{
-font-size:50px;
-color:#ff4d6d;
+img{
+width:240px;
+border-radius:15px;
 }
 
 p{
-font-size:22px;
-max-width:600px;
+font-size:24px;
+margin-top:30px;
 line-height:1.6;
 }
 
-.confetti{
-position:absolute;
-font-size:25px;
-animation:fall 4s linear infinite;
-}
-
-@keyframes fall{
-0%{transform:translateY(-10vh);}
-100%{transform:translateY(110vh);}
-}
-
 </style>
+
 </head>
 
 <body>
 
-<img class="gif" src="https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif">
-
-<h1>HAPPY BIRTHDAY!!! 🎉</h1>
+<img src="Happy Birthday GIF.gif">
 
 <p>
 
-You weren't supposed to click that anyway 😌 <br><br>
+You weren't supposed to click that.... anyway 😌
 
-Happiest Birthday Tharunuuuuuuuuuuuuuuuuuu 🎉 <br>
-Hope you have a great year ahead! <br><br>
+<br><br>
 
-Party ekkada bro? 🍾 <br>
-Cake share chesthava leka full ga nuvve tinesthava? 🎂 <br><br>
+Happiest birthday Tharunuuuuuuuuuuuu 🎉
 
-Remember… age is just a number <br>
-but in your case it's becoming a really big number now 😏
+<br>
+
+Hope you will have a great year ahead.
+
+<br><br>
+
+ Don't worry ee year kuda niku na gola tappadu😜
+
+<br>
+Barinchali niku inko option ledu babuuu
+<br>
+
+Party marchipokuuuu 🍾
 
 </p>
-
-<script>
-
-setInterval(()=>{
-let c=document.createElement("div");
-c.innerHTML="🎉";
-c.className="confetti";
-c.style.left=Math.random()*100+"vw";
-document.body.appendChild(c);
-setTimeout(()=>c.remove(),4000);
-},200);
-
-</script>
 
 </body>
 </html>
