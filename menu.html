@@ -137,7 +137,7 @@ Claim Your Birthday Gift 🎁
 
 <span class="secret-line">────</span>
 
-<a href="secret.html" class="secret-heart">💗</a>
+<span onclick="secretClick()" class="secret-heart">💗</span>
 
 <span class="secret-line">────</span>
 
@@ -153,6 +153,37 @@ Claim Your Birthday Gift 🎁
 function go(page){
 window.location=page
 }
+
+
+/* Secret heart requires 3 clicks within 3 seconds */
+
+let secretClicks = 0;
+let secretTimer;
+
+function secretClick(){
+
+    secretClicks++;
+
+    clearTimeout(secretTimer);
+
+    if(secretClicks === 3){
+
+        window.location.href = "secret.html";
+
+        return;
+
+    }
+
+    secretTimer = setTimeout(() => {
+
+        secretClicks = 0;
+
+    },3000);
+
+}
+
+
+/* Floating emojis */
 
 const emojis = ["💖","💗","💓","💕","🎉","✨","🎈"]
 
