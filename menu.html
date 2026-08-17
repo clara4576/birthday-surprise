@@ -57,6 +57,38 @@ from{box-shadow:0 0 10px pink}
 to{box-shadow:0 0 25px purple}
 }
 
+/* Secret divider */
+
+.secret-divider{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+margin:10px auto 0;
+width:280px;
+}
+
+.secret-line{
+height:2px;
+background:#f3a6c8;
+flex:1;
+border-radius:10px;
+}
+
+.secret-heart{
+color:#f3a6c8;
+font-size:17px;
+text-decoration:none;
+cursor:pointer;
+line-height:1;
+transition:0.3s;
+}
+
+.secret-heart:hover{
+transform:scale(1.15);
+text-shadow:0 0 8px #f3a6c8;
+}
+
 .floating{
 position:fixed;
 font-size:24px;
@@ -87,6 +119,20 @@ opacity:0;
 <button onclick="go('gift.html')">Claim Your Birthday Gift 🎁</button>
 
 <button onclick="go('dontclick.html')">💌 A Message For You</button>
+
+
+<!-- Secret clickable heart -->
+
+<div class="secret-divider">
+
+<div class="secret-line"></div>
+
+<a href="secret.html" class="secret-heart">💗</a>
+
+<div class="secret-line"></div>
+
+</div>
+
 
 <script>
 
